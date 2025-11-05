@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.5630f3e5.css",
-    "main.js": "/Portfolio/static/js/main.1b130948.js",
+    "main.css": "/Portfolio/static/css/main.4030bdd4.css",
+    "main.js": "/Portfolio/static/js/main.f83e2f62.js",
     "static/js/453.6264690d.chunk.js": "/Portfolio/static/js/453.6264690d.chunk.js",
     "static/media/finance.png": "/Portfolio/static/media/finance.bfe5f6586598953653bb.png",
     "static/media/meditrack.png": "/Portfolio/static/media/meditrack.4c4c57f66a956d2f7b46.png",
     "static/media/niche.png": "/Portfolio/static/media/niche.fdf9105141ccb64b0a6e.png",
     "static/media/photo.jpg": "/Portfolio/static/media/photo.9cfb670131bc90ca9800.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.5630f3e5.css.map": "/Portfolio/static/css/main.5630f3e5.css.map",
-    "main.1b130948.js.map": "/Portfolio/static/js/main.1b130948.js.map",
+    "main.4030bdd4.css.map": "/Portfolio/static/css/main.4030bdd4.css.map",
+    "main.f83e2f62.js.map": "/Portfolio/static/js/main.f83e2f62.js.map",
     "453.6264690d.chunk.js.map": "/Portfolio/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5630f3e5.css",
-    "static/js/main.1b130948.js"
+    "static/css/main.4030bdd4.css",
+    "static/js/main.f83e2f62.js"
   ]
 }
