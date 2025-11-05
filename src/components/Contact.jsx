@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -33,9 +34,44 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="contact-section">
-            <h2>Contact Me</h2>
-            <form className="contact-form" onSubmit={handleSubmit}>
+        <section
+            id="contact"
+            className="contact-section"
+            style={{ maxWidth: "600px", margin: "0 auto", padding: "2rem", textAlign: "center" }}
+        >
+            <h2 style={{ marginBottom: "1.5rem" }}>Contact Me</h2>
+
+            {/* Icon-based Contact Info */}
+            <div className="contact-info" style={{ display: "flex", justifyContent: "center", gap: "1.5rem", fontSize: "1.5rem", marginBottom: "2rem" }}>
+                <a
+                    href="https://github.com/ShikharNegi0515"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <FaGithub />
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/shikhar-negi-745508235/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <FaLinkedin />
+                </a>
+
+                <a href="mailto:shikharnegi31@gmail.com" aria-label="Email">
+                    <FaEnvelope />
+                </a>
+
+                <a href="tel:+918755062268" aria-label="Phone">
+                    <FaPhone />
+                </a>
+            </div>
+
+            {/* Contact Form */}
+            <form className="contact-form" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <input
                     type="text"
                     name="name"
@@ -62,10 +98,10 @@ const Contact = () => {
                 ></textarea>
                 <button type="submit">Send Message</button>
             </form>
+
             {status && <p style={{ marginTop: "10px", fontWeight: "bold" }}>{status}</p>}
         </section>
     );
 };
 
 export default Contact;
-

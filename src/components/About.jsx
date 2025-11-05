@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../assets/photo.jpg"; 
+import profileImg from "../assets/photo.jpg";
 
 const About = () => {
     return (
@@ -13,7 +13,8 @@ const About = () => {
                     <p>
                         I'm <strong>Shikhar Negi</strong>, a passionate web developer with experience
                         in building responsive and interactive websites. I enjoy learning new technologies
-                        and creating projects that make an impact.
+                        and creating projects that make an impact. I am always eager to take on new challenges
+                        and contribute to innovative web solutions.
                     </p>
                 </div>
             </div>

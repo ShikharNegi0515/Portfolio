@@ -34,6 +34,8 @@ const Skills = () => {
                     </div>
                 ))}
             </div>
+            <br />
+            <br />
 
             <section className="tools-section" id="tools">
                 <h2>Tools</h2>

@@ -7,8 +7,9 @@ const Navbar = () => {
     // const resumeLink = "https://drive.google.com/uc?export=download&id=1CVbNOBVwdlDhqKE9SZTNovS4NEuSMq-I";
 
     const handleResumeDownload = () => {
-        const viewLink = "https://drive.google.com/file/d/1CVbNOBVwdlDhqKE9SZTNovS4NEuSMq-I/view?usp=sharing";
-        const downloadLink = "https://drive.google.com/uc?export=download&id=1CVbNOBVwdlDhqKE9SZTNovS4NEuSMq-I";
+        const viewLink = "https://drive.google.com/file/d/1r_A4DjVpOXm2nPICYZNluFNlfTq1Z-BW/view?usp=sharing";
+        const downloadLink = "https://drive.google.com/uc?export=download&id=1r_A4DjVpOXm2nPICYZNluFNlfTq1Z-BW";
+
 
         window.open(viewLink, "_blank");
 

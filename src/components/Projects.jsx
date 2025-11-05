@@ -16,7 +16,7 @@ const projectsData = [
         image: nicheImg,
         github: "https://github.com/ShikharNegi0515/niche-community-frontend",
         netlify: "https://niche-community-frontend-3qpy.vercel.app/",
-        tech: "React | Node.js | Express.js | MongoDB | Redux | CSS",
+        tech: "React | Node.js | Express.js | MongoDB | CSS",
     },
     {
         name: "Personal Finance Manager",
