@@ -1,9 +1,7 @@
-// GitHub.jsx
 import React from "react";
 
 const GitHub = () => {
-    const username = "ShikharNegi0515"; // replace with your GitHub username
-
+    const username = "ShikharNegi0515"; 
     return (
         <section id="github" className="github-section">
             <h2 className="github-heading">GitHub Stats & Contributions</h2>

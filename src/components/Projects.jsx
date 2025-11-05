@@ -28,7 +28,7 @@ const projectsData = [
     },
     {
         name: "MediTrack",
-        description: "A web app to search and view medical/health resources using a public API.",
+        description: "A web app to search and view medical/health resources.",
         image: mediTrackImg,
         github: "https://github.com/ShikharNegi0515/MediTrack",
         netlify: "https://medi-track-navy-one.vercel.app/",
