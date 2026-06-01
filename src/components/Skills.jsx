@@ -14,8 +14,8 @@ const skillsData = [
     { name: "Express.js", img: "https://img.icons8.com/ios/100/express-js.png" },
     { name: "MongoDB", img: "https://img.icons8.com/color/256/mongodb.png" },
     { name: "NestJS", img: "https://img.icons8.com/?size=100&id=9ESZMOeUioJS&format=png&color=000000" },
+    { name: "PostgreSQL", img: "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000" },
     { name: "NextJS", img: "https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000" },
-    { name: "PostgreSQL", img: "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000" }
 ];
 
 const toolsData = [
