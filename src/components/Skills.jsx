@@ -4,6 +4,7 @@ const skillsData = [
     { name: "HTML", img: "https://img.icons8.com/color/256/html-5.png" },
     { name: "CSS", img: "https://img.icons8.com/fluency/256/css3.png" },
     { name: "JavaScript", img: "https://img.icons8.com/fluency/256/javascript.png" },
+    { name: "Python", img: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000" },
     { name: "React", img: "https://img.icons8.com/officel/256/react.png" },
     { name: "Chakra UI", img: "https://img.icons8.com/color/256/chakra-ui.png" },
     { name: "Tailwind CSS", img: "https://img.icons8.com/color/256/tailwind_css.png" },
@@ -12,11 +13,14 @@ const skillsData = [
     { name: "Node.js", img: "https://img.icons8.com/color/256/nodejs.png" },
     { name: "Express.js", img: "https://img.icons8.com/ios/100/express-js.png" },
     { name: "MongoDB", img: "https://img.icons8.com/color/256/mongodb.png" },
+    { name: "NestJS", img: "https://img.icons8.com/?size=100&id=9ESZMOeUioJS&format=png&color=000000" },
+    { name: "NextJS", img: "https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000" },
+    { name: "PostgreSQL", img: "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000" }
 ];
 
 const toolsData = [
     { name: "Git", img: "https://img.icons8.com/color/256/git.png" },
-    { name: "VS Code", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png" },
+    { name: "VS Code", img: "https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000" },
     { name: "npm", img: "https://img.icons8.com/color/256/npm.png" },
     { name: "Postman", img: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/256/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png" },
     { name: "Netlify", img: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/256/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites-logo-color-tal-revivo.png" },

@@ -3,8 +3,8 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Hero = () => {
     const handleResume = () => {
-        const viewLink = "https://drive.google.com/file/d/1r_A4DjVpOXm2nPICYZNluFNlfTq1Z-BW/view?usp=sharing";
-        const downloadLink = "https://drive.google.com/uc?export=download&id=1r_A4DjVpOXm2nPICYZNluFNlfTq1Z-BW";
+        const viewLink = "https://drive.google.com/file/d/1M3uGXD12g0IFOn2g_fzf6pUXO6jrhTJs/view?usp=sharing";
+        const downloadLink = "https://drive.google.com/uc?export=download&id=1M3uGXD12g0IFOn2g_fzf6pUXO6jrhTJs";
 
 
         // Open in new tab
