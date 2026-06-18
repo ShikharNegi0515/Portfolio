@@ -2,7 +2,7 @@ import React from "react";
 
 import nicheImg from "../assets/niche.png";
 import financeImg from "../assets/finance.png";
-import mediTrackImg from "../assets/meditrack.png";
+import atsifyImg from "../assets/ATSify.png";
 
 // use external icon URLs so you don't need local icon files
 const gitIcon = "https://img.icons8.com/color/256/git.png";
@@ -11,8 +11,16 @@ const netlifyIcon =
 
 const projectsData = [
     {
+        name: "ATsify",
+        description: "A premium ATS Resume Checker platform to analyze and optimize resumes.",
+        image: atsifyImg,
+        github: "https://github.com/ShikharNegi0515/ATSify-Smart-Resume-Checker--FrontEnd",
+        netlify: "https://at-sify-smart-resume-checker-front.vercel.app/",
+        tech: "React | NestJS | TypeScript",
+    },
+    {
         name: "Niche-Community Platform",
-        description: "A personal portfolio to showcase my projects and skills.",
+        description: "A modern full-stack platform featuring interactive discussions, profiles, and a glassmorphic UI.",
         image: nicheImg,
         github: "https://github.com/ShikharNegi0515/niche-community-frontend",
         netlify: "https://niche-community-frontend-3qpy.vercel.app/",
@@ -25,15 +33,7 @@ const projectsData = [
         github: "https://github.com/ShikharNegi0515/PersonalFinanceManager",
         netlify: "https://personal-finance-manager-dusky.vercel.app/",
         tech: "HTML | CSS | React | Firebase | Chart.js",
-    },
-    {
-        name: "MediTrack",
-        description: "A web app to search and view medical/health resources.",
-        image: mediTrackImg,
-        github: "https://github.com/ShikharNegi0515/MediTrack",
-        netlify: "https://medi-track-navy-one.vercel.app/",
-        tech: "React | Chakra-UI | Firebase | Node.js | Express.js",
-    },
+    }
 ];
 
 const Projects = () => {
