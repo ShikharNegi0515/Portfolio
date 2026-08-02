@@ -11,7 +11,7 @@ const GitHub = () => {
                 <div className="stat-card">
                     <h3>GitHub Stats</h3>
                     <img
-                        src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=radical`}
+                        src={`https://github-readme-stats-eight-theta.vercel.app/api?username=${username}&show_icons=true&theme=radical`}
                         alt="GitHub Stats"
                         className="github-img"
                     />
@@ -20,7 +20,7 @@ const GitHub = () => {
                 <div className="stat-card">
                     <h3>GitHub Streak</h3>
                     <img
-                        src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=radical`}
+                        src={`https://streak-stats.demolab.com/?user=${username}&theme=radical`}
                         alt="GitHub Streak"
                         className="github-img"
                     />
