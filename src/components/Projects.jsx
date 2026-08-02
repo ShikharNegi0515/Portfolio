@@ -1,7 +1,7 @@
 import React from "react";
 
 import nicheImg from "../assets/niche.png";
-import financeImg from "../assets/finance.png";
+import typesprintImg from "../assets/TypeSprint.png";
 import atsifyImg from "../assets/ATSify.png";
 
 // use external icon URLs so you don't need local icon files
@@ -11,12 +11,12 @@ const netlifyIcon =
 
 const projectsData = [
     {
-        name: "ATsify",
-        description: "A premium ATS Resume Checker platform to analyze and optimize resumes.",
-        image: atsifyImg,
-        github: "https://github.com/ShikharNegi0515/ATSify-Smart-Resume-Checker--FrontEnd",
-        netlify: "https://at-sify-smart-resume-checker-front.vercel.app/",
-        tech: "React | NestJS | TypeScript",
+        name: "TypeSprint",
+        description: "A minimalist, fast-paced typing platform with real-time analytics and customizable themes.",
+        image: typesprintImg,
+        github: "https://github.com/ShikharNegi0515/TypeSprint",
+        netlify: "https://type-sprint-lime.vercel.app/",
+        tech: "React | TypeScript | NestJS",
     },
     {
         name: "Niche-Community Platform",
@@ -27,12 +27,12 @@ const projectsData = [
         tech: "React | Node.js | Express.js | MongoDB | CSS",
     },
     {
-        name: "Personal Finance Manager",
-        description: "A React app to manage tasks with add, edit, delete features.",
-        image: financeImg,
-        github: "https://github.com/ShikharNegi0515/PersonalFinanceManager",
-        netlify: "https://personal-finance-manager-dusky.vercel.app/",
-        tech: "HTML | CSS | React | Firebase | Chart.js",
+        name: "ATsify",
+        description: "A premium ATS Resume Checker platform to analyze and optimize resumes.",
+        image: atsifyImg,
+        github: "https://github.com/ShikharNegi0515/ATSify-Smart-Resume-Checker--FrontEnd",
+        netlify: "https://at-sify-smart-resume-checker-front.vercel.app/",
+        tech: "React | NestJS | TypeScript",
     }
 ];
 
