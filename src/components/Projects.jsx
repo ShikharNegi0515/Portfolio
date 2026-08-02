@@ -27,7 +27,7 @@ const projectsData = [
         tech: "React | Node.js | Express.js | MongoDB | CSS",
     },
     {
-        name: "ATsify",
+        name: "ATSify",
         description: "A premium ATS Resume Checker platform to analyze and optimize resumes.",
         image: atsifyImg,
         github: "https://github.com/ShikharNegi0515/ATSify-Smart-Resume-Checker--FrontEnd",
