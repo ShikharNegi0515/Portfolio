@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -6,21 +7,62 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./App.css";
 import Github from "./components/Github";
 
-function App() {
+import ScrollToTop from "./components/ScrollToTop";
+import Loader from "./components/Loader";
+import ThemePicker from "./components/ThemePicker";
+import ParticleBackground from "./components/ParticleBackground";
+import Banner from "./components/Banner";
+import Experience from "./components/Experience";
+import NotFound from "./pages/NotFound";
+import "./App.css";
+
+const MainApp = ({ theme, toggleTheme }) => {
   return (
-    <div className="App">
-      <Navbar />
+    <>
+      <Navbar onToggleTheme={toggleTheme} theme={theme} />
+      <Banner />
       <Hero />
       <About />
+      <Experience />
       <Skills />
       <Projects />
-      <Github />
+      <Github theme={theme} />
       <Contact />
       <Footer />
-    </div>
+    </>
+  );
+};
+
+function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("portfolio-theme") || "dark";
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <Router>
+      <div className={`App ${theme === "light" ? "light" : ""}`}>
+        <ParticleBackground theme={theme} />
+        <ScrollToTop />
+        <ThemePicker />
+        {loading && <Loader onDone={() => setLoading(false)} />}
+        <Routes>
+          <Route path="/" element={<MainApp theme={theme} toggleTheme={toggleTheme} />} />
+          <Route path="/Portfolio" element={<MainApp theme={theme} toggleTheme={toggleTheme} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

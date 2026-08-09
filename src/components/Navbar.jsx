@@ -1,59 +1,63 @@
-import React, { useState } from "react";
-import "../App.css";
+import React, { useState, useEffect } from "react";
 
-const Navbar = () => {
+const sections = ["hero", "about", "skills", "projects", "github", "contact"];
+const navLabels = { hero: "Home", about: "About", skills: "Skills", projects: "Projects", github: "GitHub", contact: "Contact" };
+
+const Navbar = ({ onToggleTheme, theme }) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("hero");
+    const [scrolled, setScrolled] = useState(false);
 
-    // const resumeLink = "https://drive.google.com/uc?export=download&id=1CVbNOBVwdlDhqKE9SZTNovS4NEuSMq-I";
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+            let current = "hero";
+            sections.forEach((id) => {
+                const el = document.getElementById(id);
+                if (el && window.scrollY >= el.offsetTop - 120) current = id;
+            });
+            setActiveSection(current);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-    const handleResumeDownload = () => {
-        const viewLink = "https://drive.google.com/file/d/1o6Wqzl92fxHLx8K-C3Qi9ij1IXUItZIn/view?usp=sharing";
-        const downloadLink = "https://drive.google.com/uc?export=download&id=1o6Wqzl92fxHLx8K-C3Qi9ij1IXUItZIn";
-
-
-        window.open(viewLink, "_blank");
-
-        const link = document.createElement("a");
-        link.href = downloadLink;
-        link.download = "Shikhar_Negi_Resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const closeMenu = () => {
-        setMenuOpen(false);
+    const handleResume = () => {
+        window.open("https://drive.google.com/file/d/1o6Wqzl92fxHLx8K-C3Qi9ij1IXUItZIn/view?usp=sharing", "_blank");
     };
 
     return (
-        <nav className="navbar">
+        <nav className="navbar" style={{ boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none" }}>
             <div className="navbar-container">
                 <div className="navbar-logo">Shikhar Negi</div>
 
-                {/* Hamburger Icon */}
-                <div
-                    className={`hamburger ${menuOpen ? "active" : ""}`}
-                    onClick={toggleMenu}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+                    <span /><span /><span />
                 </div>
 
-                {/* Nav Links */}
                 <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
-                    <li><a href="#hero" onClick={closeMenu}>Home</a></li>
-                    <li><a href="#about" onClick={closeMenu}>About</a></li>
-                    <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
-                    <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-                    <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                    {sections.map((id) => (
+                        <li key={id}>
+                            <a
+                                href={`#${id}`}
+                                className={activeSection === id ? "active" : ""}
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                {navLabels[id]}
+                            </a>
+                        </li>
+                    ))}
                     <li>
-                        <button className="resume-btn" onClick={handleResumeDownload}>
-                            Resume
+                        <button className="resume-btn" onClick={handleResume}>Resume</button>
+                    </li>
+                    <li>
+                        <button
+                            className="theme-toggle"
+                            onClick={onToggleTheme}
+                            aria-label="Toggle theme"
+                            title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                        >
+                            {theme === "dark" ? "☀️" : "🌙"}
                         </button>
                     </li>
                 </ul>

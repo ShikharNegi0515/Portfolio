@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
@@ -13,93 +14,102 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus("Sending...");
-
-        const SERVICE_ID = "service_h4oxfff";
-        const TEMPLATE_ID = "template_2b1745r";
-        const PUBLIC_KEY = "b0EZPa20r0RM43iKZ";
-
         emailjs
-            .send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
-            .then(
-                (response) => {
-                    console.log("SUCCESS!", response.status, response.text);
-                    setStatus("Message sent successfully!");
-                    setFormData({ name: "", email: "", message: "" });
-                },
-                (error) => {
-                    console.log("FAILED...", error);
-                    setStatus("Failed to send message. Please check your EmailJS configuration.");
-                }
-            );
+            .send("service_h4oxfff", "template_2b1745r", formData, "b0EZPa20r0RM43iKZ")
+            .then(() => {
+                setStatus("success");
+                setFormData({ name: "", email: "", message: "" });
+            })
+            .catch(() => setStatus("error"));
     };
 
+    const contactLinks = [
+        { icon: <FaGithub />, label: "GitHub", href: "https://github.com/ShikharNegi0515", target: "_blank" },
+        { icon: <FaLinkedin />, label: "LinkedIn", href: "https://www.linkedin.com/in/shikhar-negi-745508235/", target: "_blank" },
+        { icon: <FaEnvelope />, label: "Email", href: "mailto:shikharnegi31@gmail.com", target: "" },
+        { icon: <FaPhone />, label: "+91 87550 62268", href: "tel:+918755062268", target: "" },
+    ];
+
     return (
-        <section
-            id="contact"
-            className="contact-section"
-            style={{ maxWidth: "600px", margin: "0 auto", padding: "2rem", textAlign: "center" }}
-        >
-            <h2 style={{ marginBottom: "1.5rem" }}>Contact Me</h2>
+        <section id="contact" className="contact-section">
+            <motion.h2
+                className="section-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
+                Get In Touch
+            </motion.h2>
 
-            {/* Icon-based Contact Info */}
-            <div className="contact-info" style={{ display: "flex", justifyContent: "center", gap: "1.5rem", fontSize: "1.5rem", marginBottom: "2rem" }}>
-                <a
-                    href="https://github.com/ShikharNegi0515"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
+            <div className="contact-inner">
+                {/* Contact chips */}
+                <motion.div
+                    className="contact-info-row"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                    <FaGithub />
-                </a>
+                    {contactLinks.map((link) => (
+                        <a
+                            key={link.label}
+                            href={link.href}
+                            target={link.target || undefined}
+                            rel={link.target ? "noopener noreferrer" : undefined}
+                            className="contact-chip"
+                        >
+                            {link.icon}
+                            <span>{link.label}</span>
+                        </a>
+                    ))}
+                </motion.div>
 
-                <a
-                    href="https://www.linkedin.com/in/shikhar-negi-745508235/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
+                {/* Form */}
+                <motion.form
+                    className="contact-form"
+                    onSubmit={handleSubmit}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55, delay: 0.2 }}
                 >
-                    <FaLinkedin />
-                </a>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        rows="5"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit" disabled={status === "Sending..."}>
+                        {status === "Sending..." ? "Sending..." : "Send Message"}
+                    </button>
 
-                <a href="mailto:shikharnegi31@gmail.com" aria-label="Email">
-                    <FaEnvelope />
-                </a>
-
-                <a href="tel:+918755062268" aria-label="Phone">
-                    <FaPhone />
-                </a>
+                    {status === "success" && (
+                        <p className="contact-status success">✅ Message sent successfully!</p>
+                    )}
+                    {status === "error" && (
+                        <p className="contact-status error">❌ Failed to send. Please try again.</p>
+                    )}
+                </motion.form>
             </div>
-
-            {/* Contact Form */}
-            <form className="contact-form" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                ></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            {status && <p style={{ marginTop: "10px", fontWeight: "bold" }}>{status}</p>}
         </section>
     );
 };
