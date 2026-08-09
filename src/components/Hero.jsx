@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaLinkedin, FaGithub, FaEnvelope, FaBriefcase, FaTimes } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaBriefcase } from "react-icons/fa";
 import profileImg from "../assets/Photo.png";
 import Terminal from "./Terminal";
 

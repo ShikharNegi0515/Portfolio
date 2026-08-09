@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const username = "ShikharNegi0515";
@@ -11,9 +11,6 @@ const GitHub = ({ theme }) => {
     const streakUrl = isDark
         ? `https://streak-stats.demolab.com/?user=${username}&theme=tokyonight&hide_border=true`
         : `https://streak-stats.demolab.com/?user=${username}&theme=default&hide_border=true`;
-    const calendarTheme = isDark
-        ? { dark: ["#1a1a35", "#4c1d95", "#7c3aed", "#a855f7", "#d8b4fe"] }
-        : { light: ["#fee2e2", "#fca5a5", "#f87171", "#ef4444", "#b91c1c"] };
 
 
     return (
