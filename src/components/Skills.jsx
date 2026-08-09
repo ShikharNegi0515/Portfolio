@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SkillRadar from "./SkillRadar";
 
 const categories = [
     {
@@ -91,6 +92,7 @@ const Skills = () => {
                     </motion.div>
                 ))}
             </div>
+            <SkillRadar />
         </section>
     );
 };
