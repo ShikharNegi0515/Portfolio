@@ -50,7 +50,7 @@ const GitHub = ({ theme }) => {
                         viewport={{ once: true }} transition={{ delay: 0.14, duration: 0.5 }}
                     >
                         <img
-                            src={`https://leetcard.jacoblin.cool/MannuMistri?theme=${isDark ? 'dark' : 'light'}&font=Baloo%202`}
+                            src={`https://leetcard.jacoblin.cool/ShikharNegi0515?theme=${isDark ? 'dark' : 'light'}&font=Baloo%202`}
                             alt="LeetCode Stats" loading="lazy"
                             style={{ width: '100%', objectFit: 'contain' }}
                         />
